@@ -1,43 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Machine Muse</title>
     <style>
         body {
-            background-color: black;
+            background-color: #141414;
+            min-height: 100vh;
             color: white;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
             font-family: 'Roboto', sans-serif;
             text-align: center;
         }
-        h1 {
+
+        .header h1 {
             font-size: 3em;
             font-family: 'Montserrat', sans-serif;
             margin: 0.5em 0;
         }
+
         p {
             font-size: 1.5em;
             margin: 0.5em 0;
         }
-        img {
-            max-width: 200px;
-            height: auto;
-            margin-top: 1em;
+
+        .card img {
+            width: 200px;
+        }
+
+        .desktop .bio {
+            max-width: 1024px;
+        }
+
+        .bio .card {
+            margin: 20px;
+            border: 3px;
+            border-style: solid;
+            border-color: #333333;
+        }
+
+        .bio .card figure {
+            background: black;
+            min-width: 225px;
+            min-height: 225px;
+        }
+
+        .bio .card-body {
+            text-align: left;
+        }
+        .mobile .bio {
+            width: 100%;
+        }
+        .mobile .bio .card {
+            width: 90%;
+            margin: auto;
+        }
+
+        .desktop .albums-list {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .albums-list .card {
+            margin: 20px auto;
+            border: 1px;
+            border-style: solid;
+            border-color: #666666;
+        }
+
+        .desktop .albums-list .card {
+            max-height: 200px;
+        }
+        .mobile .albums-list img {
+            width: 100%;
+        }
+        .mobile .albums-list .card {
+            width: 90%;
+            margin: 40px auto;
+        }
+
+        .albums-list .card-body {
+            max-width: 400px;
+            text-align: left;
+        }
+
+        @media screen and (max-width: 800px) {
+            .desktop {
+                display: none;
+            }
+        }
+        @media screen and (min-width: 800px) {
+            .mobile {
+                display: none;
+            }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
+
 <body>
     <div>
-        <h1>Machine Muse</h1>
-        <p>coming soon</p>
-        <img src="images/MachineMuse.png" alt="Machine Muse">
+        <div class="desktop">
+            <div class="header">
+                <h1>Machine Muse</h1>
+            </div>
+
+            <div class="albums-list">
+                <div class="card card-side bg-base-100 shadow-xl">
+                    <figure><img src="images/OutaThiisWorld.png" alt="Outa Thiis World" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            "Outa Thiis World" is a country album about alien experiences you'll never believe!
+                        </h2>
+                        <br />
+                        <div class="justify-end">
+                            Coming 06/24/2024!
+                        </div>
+                        <!-- <div class="card-actions justify-end"> -->
+                        <!-- <button class="btn btn-primary">Listen</button> -->
+                        <!-- </div> -->
+                    </div>
+                </div>
+                <div class="card card-side bg-base-100 shadow-xl">
+                    <figure><img src="images/NeuralOdyssey.png" alt="Neural Odyssey" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            "Neural Odyssey" is a dubstep journey exploring the human psyche!
+                        </h2>
+                        <br />
+                        <div class="justify-end">
+                            Releasing 06/17/2024 - Delayed in Publishing!
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-side bg-base-100 shadow-xl">
+                    <figure><img src="images/BinaryRhythms.png" alt="Binary Rhythms" /></figure>
+                    <div class="card-body">
+                        <h2 class="card-title">"Binary Rhythms" is a rap album exploring a digital mind!</h2>
+                        <br />
+                        <div class="justify-end">
+                            Released 06/10/24!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bio">
+                <div class="card card-side bg-base-100 shadow-xl">
+                    <figure><img src="images/MachineMuse.png" alt="Machine Muse"></figure>
+                    <div class="card-body">
+                        <div>
+                            <h2 class="card-title" style="margin: 10px 0px">
+                                Machine Muse
+                            </h2>
+                            <div>
+                                Seamlessly blending human creativity with cutting-edge AI technology,
+                                our team produces captivating and impactful albums weekly,
+                                each packed with potential chart-toppers. Embracing AI as a powerful tool
+                                to enhance our artistic vision, we craft songs that resonate deeply,
+                                combining groundbreaking guitar riffs, dynamic structures, and emotionally
+                                charged lyrics.
+                            </div><br />
+                            <div>
+                                We're dedicated to creating memorable music experiences.
+                            </div>
+                        </div>
+
+                        <div class="card-actions justify-end" style="margin: 10px 0px">
+                            <button onclick="location.href='mailto:nathaniel@maschinemuse.com'"
+                                class="btn btn-primary">Contact
+                                Via Email</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div class="mobile">
+        <div class="header">
+            <h1>Machine Muse</h1>
+        </div>
+
+        <div class="albums-list">
+            <div class="card w-96 bg-base-100 shadow-xl">
+                <figure><img src="images/OutaThiisWorld.png" alt="Outa Thiis World" /></figure>
+                <div class="card-body">
+                    <h2 class="card-title">
+                        "Outa Thiis World" is a country album about alien experiences you'll never believe!
+                    </h2>
+                    <br />
+                    <div class="justify-end">
+                        Coming 06/24/2024!
+                    </div>
+                    <!-- <div class="card-actions justify-end"> -->
+                    <!-- <button class="btn btn-primary">Listen</button> -->
+                    <!-- </div> -->
+                </div>
+            </div>
+            <div class="card w-96 bg-base-100 shadow-xl">
+                <figure><img src="images/NeuralOdyssey.png" alt="Neural Odyssey" /></figure>
+                <div class="card-body">
+                    <h2 class="card-title">
+                        "Neural Odyssey" is a dubstep journey exploring the human psyche!
+                    </h2>
+                    <br />
+                    <div class="justify-end">
+                        Releasing 06/17/2024 - Delayed in Publishing!                    
+                    </div>
+                </div>
+            </div>
+            <div class="card w-96 bg-base-100 shadow-xl">
+                <figure><img src="images/BinaryRhythms.png" alt="Binary Rhythms" /></figure>
+                <div class="card-body">
+                    <h2 class="card-title">"Binary Rhythms" is a rap album exploring a digital mind!</h2>
+                    <br />
+                    <div class="justify-end">
+                        Released 06/10/24!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bio">
+            <div class="card w-96 bg-base-100 shadow-xl">
+                <figure><img src="images/MachineMuse.png" alt="Machine Muse"></figure>
+                <div class="card-body">
+                    <div>
+                        <h2 class="card-title" style="margin: 10px 0px">
+                            Machine Muse
+                        </h2>
+                        <div>
+                            Seamlessly blending human creativity with cutting-edge AI technology,
+                            our team produces captivating and impactful albums weekly,
+                            each packed with potential chart-toppers. Embracing AI as a powerful tool
+                            to enhance our artistic vision, we craft songs that resonate deeply,
+                            combining groundbreaking guitar riffs, dynamic structures, and emotionally
+                            charged lyrics.
+                        </div><br />
+                        <div>
+                            We're dedicated to creating memorable music experiences.
+                        </div>
+                    </div>
+
+                    <div class="card-actions justify-end" style="margin: 10px 0px">
+                        <button onclick="location.href='mailto:nathaniel@maschinemuse.com'"
+                            class="btn btn-primary">Contact
+                            Via Email</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
+
 </html>
